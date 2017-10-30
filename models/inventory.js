@@ -31,8 +31,7 @@ Inventory.find({},function (err, inventory) {
 		//console.log(items.item);
 				}
 			tester= inventory[0].item;
-			console.log(tester);
-			test=tester;
+			return tester;
 			
 		});
 };
