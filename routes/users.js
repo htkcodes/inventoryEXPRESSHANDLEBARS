@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var kek;
+var kek; //GloBAL VAR
 
 
 
@@ -134,21 +134,31 @@ router.post('/inventory', function (req, res) {
         });
 
         Inventory.createItem(newInventory, function (err, item) {
-            if (err) throw err;
+						if (err) throw err;
+					
         });
 
 
-        console.log(Inventory.listItems());
+			Inventory.listItems(function (err, inventory) {
+				var tester;
+				if (err) throw err;
+				//for (items of inventory) {
+					//console.log(items.item);
+						//	}
+						tester= inventory[0].item;
+						kek=tester;
+						console.log(kek); //Kek is bun kool
+					});
+				console.log('Outside function ' + kek); //undefined .-.
+				//	req.flash('item',6);
 
-       
-
-
-        req.flash('inv','ok');
         req.flash('success_msg', 'Item Added');
 
         res.redirect('/users/inventory');
     }
 });
+
+
 
 router.get('/logout', function (req, res) {
     req.logout();

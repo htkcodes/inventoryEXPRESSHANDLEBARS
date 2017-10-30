@@ -12,8 +12,11 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
 
+
+
 var  routes=require('./routes/index');
 var users = require('./routes/users');
+
 
 var app=express();
 
@@ -75,6 +78,7 @@ app.use(function (req, res, next) {
   res.locals.item=req.flash('item');
   res.locals.usr = req.user || null;
   res.locals.inv=req.flash('inv');  
+  res.locals.test=6;
   next();
 });
 

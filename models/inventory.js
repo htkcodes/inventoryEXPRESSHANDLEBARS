@@ -22,17 +22,8 @@ var Inventory = module.exports = mongoose.model('Inventory', InventorySchema);
 module.exports.createItem = function(newInventory, callback){
 newInventory.save(callback);
 };
-module.exports.listItems=function(){
-	var test;
-Inventory.find({},function (err, inventory) {
-	var tester;
-	if (err) throw err;
-	for (items of inventory) {
-		//console.log(items.item);
-				}
-			tester= inventory[0].item;
-			return tester;
-			
-		});
+module.exports.listItems=function(callback){
+Inventory.find({},callback);
 };
+
 
