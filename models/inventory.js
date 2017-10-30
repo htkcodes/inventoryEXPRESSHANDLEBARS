@@ -35,6 +35,5 @@ Inventory.find({},function (err, inventory) {
 			test=tester;
 			
 		});
-	return 9;
 };
 
