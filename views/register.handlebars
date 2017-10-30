@@ -1,0 +1,49 @@
+<h2 class="page-header">Register</h2>
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+<form method="post" action="/users/register">
+    <div class="form-group">
+   <span class="input input--jiro">
+    <input type="text" class="input__field input__field--jiro" name="name">
+     <label class="input__label input__label--jiro">
+         <span class="input__label-content input__label-content--jiro">Name</span>
+     </label>
+      </span>
+  </div>
+ <div class="form-group">
+   <span class="input input--jiro">
+    <input type="text" class="input__field input__field--jiro" name="username">
+     <label class="input__label input__label--jiro">
+         <span class="input__label-content input__label-content--jiro">Username</span>
+     </label>
+      </span>
+  </div>
+  <div class="form-group">
+   <span class="input input--jiro">
+    <input type="email" class="input__field input__field--jiro" name="email">
+     <label class="input__label input__label--jiro">
+         <span class="input__label-content input__label-content--jiro">Email</span>
+     </label>
+      </span>
+  </div>
+ <div class="form-group">
+   <span class="input input--jiro">
+    <input type="password" class="input__field input__field--jiro" name="password">
+     <label class="input__label input__label--jiro">
+         <span class="input__label-content input__label-content--jiro">Password</span>
+     </label>
+      </span>
+  </div>
+  <div class="form-group">
+   <span class="input input--jiro">
+    <input type="password" class="input__field input__field--jiro" name="password2">
+     <label class="input__label input__label--jiro">
+         <span class="input__label-content input__label-content--jiro">Confirm Password</span>
+     </label>
+      </span>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

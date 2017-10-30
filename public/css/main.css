@@ -1,0 +1,66 @@
+body{
+  background-color:#03A9F4;
+}
+.container{
+  background: #03A9F4;
+}
+
+.login-wrapper{
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.login-wrapper h1{
+  color: white;
+}
+.form-control, .form-group .form-control {
+  border: 0;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+  background-size: 0 2px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: center bottom, center calc(100% - 1px);
+  background-color: transparent;
+  transition: background 0s ease-out;
+  float: none;
+  box-shadow: none;
+  border-radius: 0;
+  font-weight: 400;
+}
+.form-group.is-focused .form-control {
+  outline: none;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+  background-size: 100% 2px, 100% 1px;
+  box-shadow: none;
+  transition-duration: 0.3s;
+}
+.form-group.is-focused .form-control .material-input:after {
+  background-color: #fff;
+}
+.form-group.is-focused label,
+.form-group.is-focused label.control-label {
+  color: #fff;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: pink;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: pink;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: pink;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: pink;
+}
+.form-control{
+  color: #fff;
+}
+.btn.btn-primary,.btn.btn-primary:active:hover,.btn.btn-primary:hover{
+  background-color: #fff;
+  color: #03A9F4;
+  box-shadow: none;
+}
+.btn.btn-primary:focus, .btn.btn-primary:active, .btn.btn-primary:hover {
+box-shadow: none;
+}

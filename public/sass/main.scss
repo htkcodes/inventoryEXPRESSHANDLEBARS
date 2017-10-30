@@ -1,0 +1,374 @@
+@import 'C:/Users/rkgetten/Documents/Coding/nodejslogin/bower_components/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap.scss';
+@import '_colors.scss';
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,800');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+background: black;
+}
+
+
+%ff-title{
+   font-family: 'Raleway', sans-serif;
+    font-size: 4em;
+    color:$text-color;
+        font-weight: 800;
+    text-transform: uppercase;
+}
+%ff-sub{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2em;
+    color: $text-color;
+    text-transform: uppercase;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+  background:$primary-color;
+      overflow-x: hidden;
+}
+
+
+nav{
+    @extend %ff-title;
+    position: absolute;
+    right:0;
+    top: 50%;
+    transform: translateY(-50%);
+    ul{
+      opacity: 0;
+        
+transition: all 1s ease-out;
+
+    }
+    ul.open{
+        opacity: 1;
+        transition: all 1s ease-in;
+    }
+    ul li{
+        margin: 10px 0 0 0;
+        i{
+              position: absolute;
+            color: #fff;
+            margin-left: -90px;
+            margin-top: 10px;
+              
+        }
+             .reg-adjust{
+            position: absolute;
+           margin-left: -80px;
+            margin-top:5px;
+        }
+   
+     
+    }
+    .login{
+        a{
+            margin-left: 15px;
+        }
+    }
+
+ 
+    ul li a{
+        color: $text-color !important;
+    }
+}
+.lel{
+     animation: icon-move 0.4s infinite;
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-fill-mode: both;
+    animation-direction: alternate;
+
+}
+@keyframes icon-move{
+    from{
+        transform: translate3d(0px,0,0);
+    }
+    to{
+        transform: translate3d(20px,0,0);
+    }
+}
+.menu-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+transform: translateY(-50%);
+  margin: 5px;
+width: 50px;
+}
+.visible{
+    visibility: visible;
+}
+.hamburger {
+  .line {
+    width: 50px;
+    height: 5px;
+    background-color:$text-color;
+    display: block;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#hamburger-6.is-active {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  .line {
+    &:nth-child(2) {
+      width: 0px;
+    }
+    &:nth-child(1), &:nth-child(3) {
+      -webkit-transition-delay: 0.3s;
+      transition-delay: 0.3s;
+    }
+    &:nth-child(1) {
+      -webkit-transform: translateY(13px);
+      transform: translateY(13px);
+    }
+    &:nth-child(3) {
+      -webkit-transform: translateY(-13px) rotate(90deg);
+      transform: translateY(-13px) rotate(90deg);
+    }
+  }
+   
+}
+.title-wrapper{
+    position: absolute;
+    width: 500px;
+    top:40%;
+    left:-21.5%;
+    transform:translate(21.5%,-40%) rotate(-90deg);
+    margin: 0;
+    padding: 0;
+}
+
+
+.text-muted {
+  @extend %ff-title;
+    text-transform: uppercase;
+    filter: blur(45px);
+}
+.login-wrapper{
+position: relative;
+    display: none;
+}
+.login-anim{
+    display: block;
+    animation: loginmove 1s linear;
+    animation-fill-mode: forwards;
+}
+@keyframes loginmove{
+    from{
+        transform: translateX(2000px);
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.login-overlay{
+position: absolute;
+width: 300px;
+margin: 0;
+padding: 0;
+height: 50em;
+right: 0;
+margin-top: 15%;
+margin-right: -15%;
+
+}
+.page-header{
+    @extend %ff-title;
+    border: none;
+    text-align: center;
+}
+form{
+    .form-group{
+        margin-bottom: 50px;
+    }
+    .btn{
+        margin:auto auto auto 37%;
+    }
+}
+
+.input{
+    	position: relative;
+	z-index: 1;
+	display: inline-block;
+	margin: 1em;
+	max-width: 350px;
+	width: calc(100% - 2em);
+	vertical-align: top;
+}
+
+.input__field {
+font-family: 'Raleway',sans-serif;
+  position: relative;
+  display: block;
+  float: right;
+  padding: 0.8em;
+  width: 60%;
+height: 30px;
+    font-size: .95em;
+  border: none;
+  border-radius: 0;
+  background: $third-color;
+  color: $third-color;
+  font-weight: bold;
+  -webkit-appearance: none;
+  /* for box shadows to show on iOS */
+  &:focus {
+    outline: none;
+  }
+}
+
+.input__label {
+    @extend %ff-sub;
+  display: inline-block;
+  float: right;
+  padding: 0 1em;
+  width: 40%;
+  color:$btn-primary-color;
+  font-weight: bold;
+    font-size: 1.3em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.input__label-content {
+  position: relative;
+  display: block;
+  padding:0;
+  width: 100%;
+    text-align: center;
+}
+
+.input--jiro {
+  margin-top: 1em;
+}
+
+.input__field--jiro {
+  padding:0;
+  width: 100%;
+  background: transparent;
+  color: $text-color;//bg text-color
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.input__label--jiro {
+  position: absolute;
+  left: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  pointer-events: none;
+}
+
+.input__label-content--jiro {
+  -webkit-transition: -webkit-transform 0.3s 0.3s;
+  transition: transform 0.3s 0.3s;
+}
+
+.input__label--jiro {
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+  }
+  &::before {
+    border-top: 2px solid $btn-primary-color;
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, -2px, 0);
+    transform: translate3d(0, 100%, 0) translate3d(0, -2px, 0);
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+  }
+  &::after {
+    z-index: -1;
+    background: $contrast;
+    -webkit-transform: scale3d(1, 0, 1);
+    transform: scale3d(1, 0, 1);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+  }
+}
+
+.input__field--jiro:focus, .input--filled .input__field--jiro {
+  opacity: 1;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.input__field--jiro:focus + .input__label--jiro .input__label-content--jiro, .input--filled .input__label-content--jiro {
+  -webkit-transform: translate3d(0, -80%, 0);
+  transform: translate3d(0, -80%, 0);
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.input__field--jiro:focus + .input__label--jiro::before, .input--filled .input__label--jiro::before {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.input__field--jiro:focus + .input__label--jiro::before, .input--filled .input__label--jiro::before {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.input__field--jiro:focus + .input__label--jiro::after, .input--filled .input__label--jiro::after {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.nav{
+    li{
+        a{
+            &:hover{
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+
+
+
+
+/*@todo rmr blur effect*/
+
+
+
+
